@@ -3,33 +3,11 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
-// Use PORT if available (for local development), otherwise default to 5173
 const port = process.env.PORT ? Number(process.env.PORT) : 5173;
-const isProduction = process.env.NODE_ENV === 'production';
-const isReplit = process.env.REPL_ID !== undefined;
-
-const plugins = [react(), tailwindcss()];
-
-// Only add Replit-specific plugins in dev mode on Replit
-if (!isProduction && isReplit) {
-  plugins.push(
-    (await import('@replit/vite-plugin-runtime-error-modal').then((m) =>
-      m.default(),
-    )) as any,
-    (await import('@replit/vite-plugin-cartographer').then((m) =>
-      m.cartographer({
-        root: path.resolve(import.meta.dirname, '..'),
-      }),
-    )) as any,
-    (await import('@replit/vite-plugin-dev-banner').then((m) =>
-      m.devBanner(),
-    )) as any,
-  );
-}
 
 export default defineConfig({
   base: '/',
-  plugins,
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, 'src'),
