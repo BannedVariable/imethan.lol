@@ -993,8 +993,8 @@ function TermsPage() {
       <h2>Contact</h2>
       <p>
         Questions about these Terms can be sent to{' '}
-        <a href="mailto:contact@imtheo.lol" data-testid="link-terms-contact">
-          contact@imtheo.lol
+        <a href="mailto:contact@imethan.lol" data-testid="link-terms-contact">
+          contact@imethan.lol
         </a>
         .
       </p>
@@ -1040,8 +1040,8 @@ function PrivacyPage() {
       <h2>Contact</h2>
       <p>
         If you have any questions about this Privacy Policy, contact{' '}
-        <a href="mailto:contact@imtheo.lol" data-testid="link-privacy-contact">
-          contact@imtheo.lol
+        <a href="mailto:contact@imethan.lol" data-testid="link-privacy-contact">
+          contact@imethan.lol
         </a>
         .
       </p>
